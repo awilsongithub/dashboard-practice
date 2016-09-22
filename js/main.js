@@ -36,16 +36,16 @@ var reactIssuesURL = 'https://api.github.com/repos/facebook/react/issues';
 $(document).ready(function() {
 
     // CALL MAIN API'S FIRST
-    getData(angularURL);
-    getData(reactURL);
-    getData(emberURL);
-    getData(vueURL);
+    // getData(angularURL);
+    // getData(reactURL);
+    // getData(emberURL);
+    // getData(vueURL);
 
     // CALL "ISSUES" API'S SECOND (TO ADD SINGLE ITEM TO MAIN API DATA)
-    getData(angularIssuesURL);
-    getData(reactIssuesURL);
-    getData(emberIssuesURL);
-    getData(vueIssuesURL);
+    // getData(angularIssuesURL);
+    // getData(reactIssuesURL);
+    // getData(emberIssuesURL);
+    // getData(vueIssuesURL);
 
     // TODO refactor urls to array and call with loop(s)?
     // TODO put calls in helper function used in doc.ready and repeat functions

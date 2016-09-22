@@ -40,6 +40,17 @@ tbody th {
 nav {
     color: white;
     padding-bottom: 20px;
+    background-color: black; /* fallback if no gradient support */
+    background:
+	linear-gradient(rgba(4, 18, 30, 0.5), rgba(17, 51, 79, 0.7)), url("../img/code-background.jpg");
+	background-size: cover;
+    /*background: url("../img/code-background.jpg")  no-repeat center;
+    background-size: cover;*/
+}
+#nav-logo-img {
+    float: left;
+    width: 71px;
+    margin: 18px 16px 0px 0px;
 }
 #why-these-stats {
     padding-top: 25px;
