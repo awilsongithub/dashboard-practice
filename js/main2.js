@@ -35,16 +35,16 @@ var reactIssuesURL = 'https://api.github.com/repos/facebook/react/issues';
 $(document).ready(function() {
 
     // CALL MAIN API'S FIRST
-    // getData(angularURL);
-    // getData(reactURL);
-    // getData(emberURL);
-    // getData(vueURL);
+    getData(angularURL);
+    getData(reactURL);
+    getData(emberURL);
+    getData(vueURL);
 
     // CALL "ISSUES" API'S SECOND (TO ADD SINGLE ITEM TO MAIN API DATA)
-    // getData(angularIssuesURL);
-    // getData(reactIssuesURL);
-    // getData(emberIssuesURL);
-    // getData(vueIssuesURL);
+    getData(angularIssuesURL);
+    getData(reactIssuesURL);
+    getData(emberIssuesURL);
+    getData(vueIssuesURL);
 
     // TODO refactor urls to array and call with loop(s)?
     // TODO put calls in helper function used in doc.ready and repeat functions
@@ -151,7 +151,14 @@ function combineData(data){
 
     console.log('here is allData, should have issues_closed_percentage:');
     console.log(allData);
-    renderDataToPage(allData);
+
+    // create condition so render not called until allData is completed built
+    // otherwise datatables can't do it's thing
+    if (allData.length == 4 && allData[3].issues_closed_percentage) {
+        console.log('weve got the data, now calling render....');
+        renderDataToPage(allData);
+    }
+
 }
 
 
@@ -180,47 +187,90 @@ function calculateClosedPercentage(x){
 
 
 /* ====================================
+    RENDER DATA TO PAGE USING DATATABLES
+    after building the allData array with ajax call functions
+    let's put the data into the DOM
+
+==================================== */
+
+function renderDataToPage(allData){
+    console.log('here is allData within renderDataToPage');
+    console.log(allData);
+    showLastUpdateTime();
+
+    $('#apiDataTable').DataTable( {
+        data: allData,
+        columns: [
+            { "data": "name" },
+            { "data": "stargazers_count" },
+            { "data": "issues_closed_percentage" },
+            { "data": "forks_count" }
+        ]
+
+    } );
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====================================
     RENDER DATA TO PAGE
     after building the allData array with ajax call functions
     let's put the data into the DOM
     EMPTY COLUMNS SO WE CAN SEE IF NEW DATA POPULATION FAILED
     AFTER RENDERING TABLE DATA THEN TELL TABLESORTER PLUGIN TO SORT TABLE
 ==================================== */
-function renderDataToPage(allData){
-    console.log('here is allData within renderDataToPage');
-    console.log(allData);
-    console.log(allData[0].stargazers_count);
+// function renderDataToPage(allData){
+//     console.log('here is allData within renderDataToPage');
+//     console.log(allData);
+//     console.log(allData[0].stargazers_count);
+//
+//     $('td:first-child').empty();
+//     $('td:nth-child(2)').empty();
+//     $('td:nth-child(3)').empty();
+//
+//
+//     $('#angular-stargazers').text(allData[0].stargazers_count);
+//     $('#react-stargazers').text(allData[1].stargazers_count);
+//     $('#ember-stargazers').text(allData[2].stargazers_count);
+//     $('#vue-stargazers').text(allData[3].stargazers_count);
+//
+//
+//     $('#angular-forks').text(allData[0].forks_count);
+//     $('#react-forks').text(allData[1].forks_count);
+//     $('#ember-forks').text(allData[2].forks_count);
+//     $('#vue-forks').text(allData[3].forks_count);
+//
+//
+//     $('#angular-support').text(allData[0].issues_closed_percentage + '%');
+//     $('#react-support').text(allData[1].issues_closed_percentage + '%');
+//     $('#ember-support').text(allData[2].issues_closed_percentage + '%');
+//     $('#vue-support').text(allData[3].issues_closed_percentage + '%');
+//
+//
+//     $('#apiDataTable').tablesorter();
+//
+//
+//     showLastUpdateTime();
+//
+//
+// }
 
-    $('td:first-child').empty();
-    $('td:nth-child(2)').empty();
-    $('td:nth-child(3)').empty();
 
 
-    $('#angular-stargazers').text(allData[0].stargazers_count);
-    $('#react-stargazers').text(allData[1].stargazers_count);
-    $('#ember-stargazers').text(allData[2].stargazers_count);
-    $('#vue-stargazers').text(allData[3].stargazers_count);
-
-
-    $('#angular-forks').text(allData[0].forks_count);
-    $('#react-forks').text(allData[1].forks_count);
-    $('#ember-forks').text(allData[2].forks_count);
-    $('#vue-forks').text(allData[3].forks_count);
-
-
-    $('#angular-support').text(allData[0].issues_closed_percentage + '%');
-    $('#react-support').text(allData[1].issues_closed_percentage + '%');
-    $('#ember-support').text(allData[2].issues_closed_percentage + '%');
-    $('#vue-support').text(allData[3].issues_closed_percentage + '%');
-
-
-    $('#apiDataTable').tablesorter();
-
-
-    showLastUpdateTime();
-
-
-}
 
 
 // show 'last update' using current time
