@@ -36,6 +36,9 @@ We are evaluating new client-side Javascript frameworks. To choose the "winning"
 - refactoring. test against requirements.
 - redesign and refine UI.
 
+## Bugs/Issues Overcome
+- DataTables was producing warning: Cannot reinitialise DataTable and 3 or the 4 closed percentage numbers were NaN. This was because the render function containing the initialization of the table was being called repeatedly (my conditional for checking completion of data compiliation before doing this was failing). Solved both bugs by creating a tracking variable to increment on each call of calculate function and call render only when calculation (last step in building the allData object) had been called as many times as the lenght of the allData array.
+
 ## Unsolved Problems and TODO items
 - Enhance visual design with charts, possibly using canvasjs
 - bug: Static table data no longer rendering

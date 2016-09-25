@@ -12,6 +12,7 @@ var allData = [];
 // update frequency: 1 hour as only 60 calls/hour allowed by api.gihub without Oauth.
 var FREQ = 3600000;
 var repeat = true; // turn updates on or off
+var numberTimesCalculateCalled = 0; // track so we know when allData is completely built and we can run dataTables to render the table.
 
 // MAIN API URLS
 var emberURL = 'https://api.github.com/repos/emberjs/ember.js';
@@ -152,13 +153,6 @@ function combineData(data){
     console.log('here is allData, should have issues_closed_percentage:');
     console.log(allData);
 
-    // create condition so render not called until allData is completed built
-    // otherwise datatables can't do it's thing
-    if (allData.length == 4 && allData[3].issues_closed_percentage) {
-        console.log('weve got the data, now calling render....');
-        renderDataToPage(allData);
-    }
-
 }
 
 
@@ -182,6 +176,15 @@ function calculateClosedPercentage(x){
         x[i].issues_closed_percentage = fraction.toFixed(2);
         console.log(x[i].issues_closed_percentage);
     }
+
+    // keep track so we know when this has been called on every object in the allData array (indicating allData should be complete and we can render the table to the DOM). var num initialized to zero above....
+    numberTimesCalculateCalled += 1; 
+    if (numberTimesCalculateCalled === allData.length) {
+        console.log('weve got the data, now calling render....');
+        renderDataToPage(allData);
+    }
+
+
 
 }
 
