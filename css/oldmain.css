@@ -16,13 +16,6 @@
 .jumbotron {
     padding-bottom: 20px;
 }
-#apiDataTable {
-    width: 100%;
-}
-#apiDataTable_wrapper .col-sm-6 {
-    width:200px;
-    float: left;
-}
 /* SELECT CHILD ELEMENTS 2,3,4 IN EACH TABLE ROW  */
 tbody tr > :nth-child(2), tbody tr > :nth-child(3),  tbody tr > :nth-child(4)  {
     /*font-family: 'Orbitron', sans-serif;*/
@@ -64,8 +57,6 @@ nav {
 #last-refresh {
     clear: both;
     padding-bottom: 25px;
-    padding-top: 4px;
-    padding-right: 10px;
 }
 .grey-row {
     background-color: #F7F7F9;
