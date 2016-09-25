@@ -178,13 +178,11 @@ function calculateClosedPercentage(x){
     }
 
     // keep track so we know when this has been called on every object in the allData array (indicating allData should be complete and we can render the table to the DOM). var num initialized to zero above....
-    numberTimesCalculateCalled += 1; 
+    numberTimesCalculateCalled += 1;
     if (numberTimesCalculateCalled === allData.length) {
         console.log('weve got the data, now calling render....');
         renderDataToPage(allData);
     }
-
-
 
 }
 
