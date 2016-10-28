@@ -13,7 +13,7 @@
         <link href="fonts/Orbitron/Orbitron-Medium.ttf" >
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.css"/>
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/styles.css">
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
@@ -27,15 +27,12 @@
     </nav>
 
 
-
-
-
     <div class="container">
         <div class="row" id='stats-row'>
 
             <!-- GITHUB TABLE COLUMN -->
             <div class="col-sm-12 col-md-8 col-lg-8 element-border">
-                <h3 class='pull-left'>Github Stats (Live Hourly Refresh)</h3>
+                <h3 class='pull-left'>Live Github Stats</h3>
 
                 <!--  MODAL LINK -->
                 <a data-toggle='modal' data-target='#githubModal'><p id='why-these-stats' class='pull-right'>Why these stats?&nbsp<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></p></a>
@@ -105,76 +102,13 @@
                 </thead>
               </table>
 
-
-
-
-
-                  <!-- THIS TABLE CONTENT REMOVED -->
-                  <!-- <thead class='thead-inverse'>
-                      <tr>
-                          <th></th>
-                          <th>
-                              Stargazers
-                              &nbsp<a href='#>'<span class="glyphicon glyphicon-sort" aria-hidden="true"></span></a>
-                              <br>
-                              <small>As measure of project popularity</small>
-
-                          </th>
-                          <th>
-                              % Of Issues Closed
-                              &nbsp<a href='#>'<span class="glyphicon glyphicon-sort" aria-hidden="true"></span></a>
-                              <br>
-                              <small>As measure of community support</small>
-                          </th>
-                          <th>
-                              Forks
-                              &nbsp<a href='#>'<span class="glyphicon glyphicon-sort" aria-hidden="true"></span></a>
-                              <br>
-                              <small>As measure of development activity</small>
-                          </th>
-
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <th>Angular</th>
-                          <td id='angular-stargazers'></td>
-                          <td id='angular-support'></td>
-                          <td id='angular-forks'></td>
-                      </tr>
-                      <tr>
-                          <th>React</th>
-                          <td id='react-stargazers'></td>
-                          <td id='react-support'></td>
-                          <td id='react-forks'></td>
-
-                      </tr>
-                      <tr>
-                          <th>Ember</th>
-                          <td id='ember-stargazers'></td>
-                          <td id='ember-support'></td>
-                          <td id='ember-forks'></td>
-
-                      </tr>
-                      <tr>
-                          <th>Vue</th>
-                          <td id='vue-stargazers'></td>
-                          <td id='vue-support'></td>
-                          <td id='vue-forks'></td>
-
-                      </tr>
-                  </tbody> -->
-
-
-
-
             </div> <!-- END GITHUB TABLE COLUMN -->
 
 
 
             <!-- OTHER STATS COLUMN -->
 
-            <div class="col-sm-12 col-lg-4 col-md-8" id='other-stats-column'>
+            <div class="col-sm-12 col-lg-4 col-md-8 element-border" id='other-stats-column'>
                 <h3 class='pull-left'>Other Stats</h3>
 
                 <!-- LAST REFRESH -->

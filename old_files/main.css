@@ -2,20 +2,30 @@
 
 /* ============================
    CUSTOM STYLES
+
+$grey-background: #F7F7F9;
+$table-small-text: lighter;
+$
+
+
+@dynamic-table-text {
+    color: #e84e42;
+    font-size: 18px;
+}
+
+@mixin heading-large {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+
+
 =============================== */
 
-/* GOOGLE SEARCHES WIDGET IFRAME */
-#trends-widget-1 {
-    height: 400px;
-}
-.jumbotron p {
-    margin-bottom: 15px;
-    font-size: 16px;
-    font-weight: 200;
-}
-.jumbotron {
-    padding-bottom: 20px;
-}
+
+
+/* TABLES */
 #apiDataTable {
     width: 100%;
 }
@@ -24,10 +34,14 @@
     float: left;
 }
 /* SELECT CHILD ELEMENTS 2,3,4 IN EACH TABLE ROW  */
-tbody tr > :nth-child(2), tbody tr > :nth-child(3),  tbody tr > :nth-child(4)  {
+tbody tr > :nth-child(2), tbody tr > :nth-child(3), tbody tr > :nth-child(4)  {
     /*font-family: 'Orbitron', sans-serif;*/
     color: #e84e42;
     font-size: 18px;
+}
+table#apiDataTable tr td:first-child {
+    font-size: 24px;
+    font-weight: 500;
 }
 .dynamic-text  {
     /*font-family: 'Orbitron', sans-serif;*/
@@ -41,9 +55,41 @@ tbody th {
     font-size: 24px;
     font-weight: 500;
 }
+/* the section row with charts */
+.grey-row {
+    background-color: #F7F7F9;
+    padding-top: 25px;
+    margin-top: 35px;
+}
+.grey-row h3 {
+    padding-bottom: 25px;
+}
+/* "INTEREST OVER TIME" WIDGET IFRAME */
+#trends-widget-1 {
+    height: 400px;
+}
+
+
+/* row with two tables (not graphs) */
+#stats-row {
+    padding-top: 25px;
+}
+
+#other-stats-column {
+    padding-left: 25px;
+}
+.static-data td {
+    color: black;
+    font-size: 14px;
+}
+
+/* GENERAL */
 .container {
     /*width: 900px;*/
 }
+
+
+/* NAV */
 nav {
     color: white;
     padding-bottom: 20px;
@@ -58,6 +104,9 @@ nav {
     width: 71px;
     margin: 18px 16px 0px 0px;
 }
+
+
+/* GITHUB STATS NON-TABLE ELEMENTS */
 #why-these-stats {
     padding-top: 25px;
 }
@@ -67,29 +116,16 @@ nav {
     padding-top: 4px;
     padding-right: 10px;
 }
-.grey-row {
-    background-color: #F7F7F9;
-    padding-top: 25px;
-    margin-top: 35px;
-}
-#stats-row {
-    padding-top: 25px;
-}
-.grey-row h3 {
-    padding-bottom: 25px;
-}
+
+
+
 .element-border {
     border: 1px solid lightgrey;
     border-radius: 2px;
-     box-shadow: 3px 3px 3px grey;
+    box-shadow: 3px 3px 3px grey;
 }
-#other-stats-column {
-    padding-left: 25px;
-}
-.static-data td {
-    color: black;
-    font-size: 14px;
-}
+
+
 
 
 /* ============================
@@ -105,4 +141,13 @@ nav {
 }
 .digital-font {
     font-family: Digital;
+}*/
+
+/*.jumbotron p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 200;
+}
+.jumbotron {
+    padding-bottom: 20px;
 }*/

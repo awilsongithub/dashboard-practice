@@ -1,0 +1,115 @@
+/* ============================
+   SASS VARIABLES AND MIXINS
+=============================== */
+/* ============================
+            NAV
+=============================== */
+nav {
+  color: white;
+  padding-bottom: 20px;
+  background-color: black;
+  /* fallback if no gradient support */
+  /* blue shades gradient */
+  background: linear-gradient(rgba(4, 18, 30, 0.5), rgba(17, 51, 79, 0.7)), url("../img/code-background.jpg");
+  background-size: cover; }
+  nav #nav-logo-img {
+    float: left;
+    width: 71px;
+    margin: 18px 16px 0px 0px; }
+
+/* ============================
+        TABLES SECTION/ROW
+   (BUT NOT TABLES THEMSELVES)
+=============================== */
+#stats-row {
+  padding-top: 25px;
+  /* aligns search box in datatables rendering */
+  /* github stats card not incl. table itself */
+  /* card containing github table */ }
+  #stats-row #apiDataTable_wrapper .col-sm-6 {
+    width: 200px;
+    float: left; }
+  #stats-row #why-these-stats {
+    padding-top: 25px; }
+  #stats-row #last-refresh {
+    clear: both;
+    padding-bottom: 25px;
+    padding-top: 4px;
+    padding-right: 10px; }
+  #stats-row .element-border {
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    box-shadow: 3px 3px 3px grey;
+    max-width: 723px;
+    /* to align at various breakpoints */
+    margin: 10px; }
+  #stats-row .dynamic-text {
+    color: #da112a;
+    font-size: 14px; }
+
+/* ============================
+            TABLES
+=============================== */
+table {
+  /* other stats table */ }
+  table #other-stats-column {
+    padding-left: 25px; }
+  table .static-data td {
+    color: black;
+    font-size: 14px; }
+  table small {
+    font-weight: lighter; }
+  table tbody th {
+    font-size: 24px;
+    font-weight: 500; }
+
+/* github table */
+#apiDataTable {
+  width: 100%; }
+  #apiDataTable tbody tr td:nth-child(2), #apiDataTable tbody tr td:nth-child(3), #apiDataTable tbody tr td:nth-child(4) {
+    color: #da112a;
+    font-size: 14px; }
+  #apiDataTable tbody tr td:first-child {
+    font-size: 24px;
+    font-weight: 500; }
+
+/* ============================
+         CHART SECTION
+=============================== */
+.grey-row {
+  background-color: #F7F7F9;
+  padding-top: 25px;
+  margin-top: 35px;
+  /* "interest over time" iframe */ }
+  .grey-row h3 {
+    padding-bottom: 25px; }
+  .grey-row #trends-widget-1 {
+    height: 400px; }
+
+/* ============================
+        MEDIA QUERIES
+=============================== */
+@media only screen and (max-width: 768px) {
+  table {
+    width: 100%; } }
+/* ============================
+   DISCARDS & MAYBE LATERS
+=============================== */
+/* DIDN'T WORK */
+/*@font-face {
+    font-family: Digital;
+    src: url('djb-get-digital.ttf');
+}
+.digital-font {
+    font-family: Digital;
+}*/
+/*.jumbotron p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 200;
+}
+.jumbotron {
+    padding-bottom: 20px;
+}*/
+
+/*# sourceMappingURL=styles.css.map */

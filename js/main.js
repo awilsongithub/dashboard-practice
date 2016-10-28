@@ -34,7 +34,18 @@ var reactIssuesURL = 'https://api.github.com/repos/facebook/react/issues';
     call function to make delayed calls and repeate every 2.1 hours
 ==================================== */
 $(document).ready(function() {
+    callGetData();
+    // START AUTOMATIC REFRESH
+    makeDelayedCallsAndRepeat();
+    // TODO iterate to make calls....
+    // for (var framework = 0; framework < allData.length; framework++){
+    //     getData(allData[i].apiURL, framework); // framework passed to combine data
+    //     getData(allData[i].apiIssuesURL, framework);
+    // }
 
+});
+
+function callGetData(){
     // CALL MAIN API'S FIRST
     getData(angularURL);
     getData(reactURL);
@@ -46,14 +57,7 @@ $(document).ready(function() {
     getData(reactIssuesURL);
     getData(emberIssuesURL);
     getData(vueIssuesURL);
-
-    // TODO refactor urls to array and call with loop(s)?
-    // TODO put calls in helper function used in doc.ready and repeat functions
-
-    // START AUTOMATIC REFRESH
-    makeDelayedCallsAndRepeat();
-
-});
+}
 
 
 
@@ -212,66 +216,6 @@ function renderDataToPage(allData){
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ====================================
-    RENDER DATA TO PAGE
-    after building the allData array with ajax call functions
-    let's put the data into the DOM
-    EMPTY COLUMNS SO WE CAN SEE IF NEW DATA POPULATION FAILED
-    AFTER RENDERING TABLE DATA THEN TELL TABLESORTER PLUGIN TO SORT TABLE
-==================================== */
-// function renderDataToPage(allData){
-//     console.log('here is allData within renderDataToPage');
-//     console.log(allData);
-//     console.log(allData[0].stargazers_count);
-//
-//     $('td:first-child').empty();
-//     $('td:nth-child(2)').empty();
-//     $('td:nth-child(3)').empty();
-//
-//
-//     $('#angular-stargazers').text(allData[0].stargazers_count);
-//     $('#react-stargazers').text(allData[1].stargazers_count);
-//     $('#ember-stargazers').text(allData[2].stargazers_count);
-//     $('#vue-stargazers').text(allData[3].stargazers_count);
-//
-//
-//     $('#angular-forks').text(allData[0].forks_count);
-//     $('#react-forks').text(allData[1].forks_count);
-//     $('#ember-forks').text(allData[2].forks_count);
-//     $('#vue-forks').text(allData[3].forks_count);
-//
-//
-//     $('#angular-support').text(allData[0].issues_closed_percentage + '%');
-//     $('#react-support').text(allData[1].issues_closed_percentage + '%');
-//     $('#ember-support').text(allData[2].issues_closed_percentage + '%');
-//     $('#vue-support').text(allData[3].issues_closed_percentage + '%');
-//
-//
-//     $('#apiDataTable').tablesorter();
-//
-//
-//     showLastUpdateTime();
-//
-//
-// }
-
-
-
 
 
 // show 'last update' using current time
