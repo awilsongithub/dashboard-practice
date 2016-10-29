@@ -60,18 +60,18 @@ table {
   table small {
     font-weight: lighter; }
   table tbody th {
-    font-size: 24px;
-    font-weight: 500; }
+    font-size: 14px;
+    font-weight: bold; }
 
 /* github table */
 #apiDataTable {
-  width: 100%; }
+  width: 100% !important; }
   #apiDataTable tbody tr td:nth-child(2), #apiDataTable tbody tr td:nth-child(3), #apiDataTable tbody tr td:nth-child(4) {
     color: #da112a;
     font-size: 14px; }
   #apiDataTable tbody tr td:first-child {
-    font-size: 24px;
-    font-weight: 500; }
+    font-size: 14px;
+    font-weight: bold; }
 
 /* ============================
          CHART SECTION

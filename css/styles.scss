@@ -16,6 +16,10 @@ $breakpoint-tablet: 768px;
     font-size: 24px;
     font-weight: 500;
 }
+@mixin table-heading-medium {
+    font-size: 14px;
+    font-weight: bold;
+}
 @mixin box-shadow-card {
     border: 1px solid lightgrey;
     border-radius: 2px;
@@ -92,20 +96,22 @@ table {
         font-weight: $table-small-text;
     }
     tbody th {
-        font-size: 24px;
-        font-weight: 500;
+        @include table-heading-medium;
     }
+    // th, td {  TODO this is not working.... i want shorter row height
+    //     padding: 4px 8px 4px 8px;
+    // }
 }
 
 /* github table */
 #apiDataTable {
-    width: 100%;
+    width: 100% !important;
     tbody tr {
         td:nth-child(2), td:nth-child(3), td:nth-child(4)  {
             @include dynamic-table-text;
         }
         td:first-child {
-            @include heading-large;
+            @include table-heading-medium;
         }
     }
 }
