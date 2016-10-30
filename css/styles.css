@@ -85,13 +85,20 @@ table {
     padding-bottom: 25px; }
   .grey-row #trends-widget-1 {
     height: 400px; }
+  .grey-row #market-reach {
+    margin-top: 20px; }
+  .grey-row #other-stats-column {
+    margin-top: 20px !important; }
 
 /* ============================
         MEDIA QUERIES
 =============================== */
 @media only screen and (max-width: 768px) {
   table {
-    width: 100%; } }
+    width: 100%; }
+
+  nav h1 {
+    font-size: 28px; } }
 /* ============================
    DISCARDS & MAYBE LATERS
 =============================== */

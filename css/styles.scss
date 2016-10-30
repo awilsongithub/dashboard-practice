@@ -132,6 +132,12 @@ table {
     #trends-widget-1 {
         height: 400px;
     }
+    #market-reach {
+        margin-top: 20px;
+    }
+    #other-stats-column {
+        margin-top: 20px !important;
+    }
 }
 
 
@@ -141,6 +147,9 @@ table {
 @media only screen and (max-width: $breakpoint-tablet) {
     table {
         width: 100%;
+    }
+    nav h1 {
+        font-size: 28px;
     }
 
 }
