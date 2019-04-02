@@ -29,6 +29,8 @@ nav {
   #stats-row #apiDataTable_wrapper .col-sm-6 {
     width: 200px;
     float: left; }
+  #stats-row #apiDataTable_wrapper .row:nth-child(2) {
+    overflow: scroll; }
   #stats-row #why-these-stats {
     padding-top: 25px; }
   #stats-row #last-refresh {
@@ -80,6 +82,7 @@ table {
   background-color: #F7F7F9;
   padding-top: 25px;
   margin-top: 35px;
+  padding-bottom: 50px;
   /* "interest over time" iframe */ }
   .grey-row h3 {
     padding-bottom: 25px; }

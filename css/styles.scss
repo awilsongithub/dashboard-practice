@@ -1,3 +1,4 @@
+
 /* ============================
    SASS VARIABLES AND MIXINS
 =============================== */
@@ -60,6 +61,11 @@ nav {
     #apiDataTable_wrapper .col-sm-6 {
         width:200px;
         float: left;
+    }
+    #apiDataTable_wrapper {
+        .row:nth-child(2) {
+            overflow: scroll;
+        }
     }
     /* github stats card not incl. table itself */
     #why-these-stats {
@@ -124,6 +130,7 @@ table {
     background-color: #F7F7F9;
     padding-top: $medium-padding;
     margin-top: 35px;
+    padding-bottom: 50px;
 
     h3 {
         padding-bottom: $medium-padding;
