@@ -104,9 +104,6 @@ table {
     tbody th {
         @include table-heading-medium;
     }
-    // th, td {  TODO this is not working.... i want shorter row height
-    //     padding: 4px 8px 4px 8px;
-    // }
 }
 
 /* github table */
@@ -126,6 +123,7 @@ table {
 /* ============================
          CHART SECTION
 =============================== */
+
 .grey-row {
     background-color: #F7F7F9;
     padding-top: $medium-padding;
@@ -146,6 +144,19 @@ table {
         margin-top: 20px !important;
     }
 }
+
+/* ============================
+            FOOTER
+=============================== */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;   
+}
+
 
 
 /* ============================
